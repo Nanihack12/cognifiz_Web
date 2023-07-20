@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color-Changing Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <button id="colorButton">Click Me!</button>
+
+  <script>
+    const button = document.getElementById('colorButton');
+
+    button.addEventListener('click', () => {
+      // Generate a random color in hexadecimal format
+      const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      button.style.backgroundColor = randomColor;
+    });
+  </script>
+</body>
+</html>
